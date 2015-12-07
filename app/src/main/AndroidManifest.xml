@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.andrewsosa.beacon">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".Beacon"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.CustomActionBar">
+        <activity android:name=".DispatchActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".AuthActivity"
+            android:theme="@style/AppTheme.Login" />
+        <activity
+            android:name=".LoginActivity"
+            android:theme="@style/AppTheme.Login" />
+        <activity
+            android:name=".SignupActivity"
+            android:theme="@style/AppTheme.Login"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/title_activity_main"
+            android:theme="@style/AppTheme.DrawerTheme" />
+        <activity
+            android:name=".NewGroupActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".GroupActivity"
+            android:label="@string/title_activity_group"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.CustomActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.andrewsosa.beacon.MainActivity" />
+        </activity>
+    </application>
+
+</manifest>

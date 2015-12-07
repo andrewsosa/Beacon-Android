@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/chat_padding">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Placeholder"
+        android:id="@+id/tv_chat_message"
+        android:textAppearance="@style/AppTheme.Chat.ChatText"
+        android:padding="@dimen/chat_padding_box"
+        android:background="@drawable/bg_chat_box"
+        android:textColor="@color/primaryTextDark"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentTop="false"
+        android:layout_toLeftOf="@+id/avatar_layout"
+        android:layout_marginRight="16dp"
+        android:minHeight="@dimen/chat_icon_size" />
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:id="@+id/avatar_layout">
+
+        <ImageButton
+            android:layout_width="@dimen/chat_icon_size"
+            android:layout_height="@dimen/chat_icon_size"
+            android:id="@+id/imageButton2"
+            android:background="@drawable/bg_chat_icon" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="A"
+            android:id="@+id/textView6"
+            android:layout_gravity="center"
+            android:textAppearance="@style/AppTheme.Chat.IconText" />
+    </FrameLayout>
+
+</RelativeLayout>

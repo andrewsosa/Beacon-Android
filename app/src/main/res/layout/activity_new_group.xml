@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.andrewsosa.beacon.MainActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:contentInsetStart="72dp"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="144dp"
+            android:paddingLeft="72dp"
+            android:paddingRight="32dp"
+            android:orientation="vertical"
+            android:gravity="center_vertical">
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/et_groupname"
+                android:text="A Group"
+                android:textSize="34sp"
+                android:singleLine="true"
+                android:hint="Group Name"
+                app:met_textColor="@color/primaryTextLight"
+                app:met_maxCharacters="32"
+                app:met_floatingLabel="none"
+                app:met_primaryColor="@color/primaryTextLight"
+                app:met_helperTextColor="@color/primaryTextLight"
+                app:met_errorColor="@color/primaryTextLight"
+                app:met_underlineColor="@color/accent"
+                app:met_singleLineEllipsis="true"
+                android:inputType="text" />
+
+        </LinearLayout>
+
+
+
+    </android.support.design.widget.AppBarLayout>
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/fab_margin"
+        android:layout_gravity="bottom|right"
+        android:src="@drawable/ic_group_add_24dp"
+        android:tint="@color/grey_50"
+        android:visibility="gone"/>
+
+</android.support.design.widget.CoordinatorLayout>

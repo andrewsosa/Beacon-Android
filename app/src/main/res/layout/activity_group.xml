@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.flipboard.bottomsheet.BottomSheetLayout
+    android:id="@+id/bottomsheet"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="false"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.andrewsosa.beacon.GroupActivity"
+        android:background="@color/primary">
+
+       <!-- <android.support.design.widget.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?attr/colorPrimary"
+            android:theme="@style/AppTheme.CustomActionBar.AppBarOverlay"> -->
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="?attr/actionBarSize"
+            android:paddingLeft="72dp"
+            android:paddingRight="32dp" >
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:popupTheme="@style/AppTheme.CustomActionBar.PopupOverlay"/>
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/et_groupname"
+                android:text="A Group"
+                android:textSize="34sp"
+                android:singleLine="true"
+                android:hint="Group Name"
+                app:met_textColor="@color/primaryTextLight"
+                app:met_maxCharacters="32"
+                app:met_floatingLabel="none"
+                app:met_primaryColor="@color/primaryTextLight"
+                app:met_helperTextColor="@color/primaryTextLight"
+                app:met_errorColor="@color/primaryTextLight"
+                app:met_underlineColor="@color/accent"
+                app:met_singleLineEllipsis="true"
+                android:inputType="text"/>
+
+        </LinearLayout>
+
+
+
+        <!-- </android.support.design.widget.AppBarLayout> -->
+
+
+
+    </android.support.design.widget.CoordinatorLayout>
+
+</com.flipboard.bottomsheet.BottomSheetLayout>

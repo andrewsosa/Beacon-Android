@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Beacon</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="login_prompt_content">Enter your email to access your beacons, feeds, and messages.</string>
+
+    <!-- Transitions -->
+    <string name="transition_login_email">transition login email</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_group">GroupActivity</string>
+</resources>

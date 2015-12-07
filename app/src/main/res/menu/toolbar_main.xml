@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_create"
+        android:title="Create new..."
+        android:icon="@drawable/ic_add_24dp"
+        android:orderInCategory="1"
+        app:showAsAction="ifRoom"/>
+    <!--<item
+        android:id="@+id/action_friends"
+        android:title="Friends"
+        android:icon="@drawable/ic_people_outline_24dp"
+        android:orderInCategory="1"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_notifications"
+        android:title="Notifications"
+        android:icon="@drawable/ic_notifications_none_24dp"
+        android:orderInCategory="2"
+        app:showAsAction="ifRoom" />-->
+</menu>

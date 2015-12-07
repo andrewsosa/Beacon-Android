@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.andrewsosa.beacon.MainActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:contentInsetStart="72dp"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabs"
+            android:layout_height="50dp"
+            android:layout_width="match_parent"
+            app:tabMode="fixed"
+            app:tabIndicatorColor="@color/grey_50"/>
+
+
+        <!-- <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:orientation="horizontal"
+            android:background="@color/grey_50"
+            android:gravity="center_vertical"
+            android:padding="16dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="All Beacons"
+                android:id="@+id/textView2"
+                android:textSize="16sp"
+                android:textColor="@color/primaryTextDark" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/imageView3"
+                android:layout_weight="1"
+                android:layout_gravity="bottom"
+                android:src="@drawable/ic_arrow_drop_down_24dp"
+                android:scaleType="fitEnd" />
+        </LinearLayout> -->
+
+    </android.support.design.widget.AppBarLayout>
+
+    <include
+        layout="@layout/content_overview" />
+
+    <android.support.design.widget.FloatingActionButton android:id="@+id/fab"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end" android:layout_margin="@dimen/fab_margin"
+        android:src="@drawable/ic_pin_drop_black_24dp"
+        android:tint="@color/grey_50"
+        android:visibility="gone"/>
+
+</android.support.design.widget.CoordinatorLayout>
