@@ -128,10 +128,11 @@ public class OverviewFragment extends Fragment {
         @Override
         public void onPageSelected(int position) {
             if(position == 0) {
-               // mToolbar.setTitle(mAdapter.getPageTitle(position));
                 mToolbar.setNavigationIcon(R.drawable.ic_menu_24dp);
-                mListener.registerToolbar(mToolbar);
+                mListener.registerToolbar(mToolbar); // Resets the toolbar to init view
             } else {
+
+                // Navigation updoots
                 mToolbar.setNavigationIcon(R.drawable.ic_arrow_back_24dp);
                 mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
                     @Override
@@ -139,6 +140,11 @@ public class OverviewFragment extends Fragment {
                         changeViewPagerFocus(0);
                     }
                 });
+
+                // Menu updoots
+                mToolbar.getMenu().clear();
+
+                // Name updoots
                 String groupName = getContext()
                         .getSharedPreferences(Beacon.PREFS, Context.MODE_PRIVATE)
                         .getString(Beacon.ACTIVE_GROUP_NAME, "");

@@ -21,6 +21,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.firebase.client.Firebase;
 import com.firebase.ui.FirebaseRecyclerAdapter;
 
+import java.util.Date;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -38,7 +40,7 @@ public class ChatFragment extends PagerFragment {
     private ImageButton mSubmitButton;
     private RecyclerView mRecyclerView;
     private FirebaseChatAdapter mAdapter;
-    private RecyclerView.LayoutManager mLayoutManager;
+    private LinearLayoutManager mLayoutManager;
 
     private Firebase chatRef;
     private String chatKey;
@@ -61,7 +63,14 @@ public class ChatFragment extends PagerFragment {
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(getContext());
+
+
+        //mLayoutManager.setReverseLayout(true);
+        mLayoutManager.setStackFromEnd(true);
+
+
         mRecyclerView.setLayoutManager(mLayoutManager);
+
 
         if(savedInstanceState != null) {
             Log.d("Beacon", "savedInstanceState != null");
@@ -70,7 +79,7 @@ public class ChatFragment extends PagerFragment {
             Log.d("Beacon", "savedInstanceState == null");
         }
 
-        chatRef = new Firebase(Beacon.URL).child("chat").child(chatKey);
+        chatRef = buildChatReference(chatKey);
         mAdapter = new FirebaseChatAdapter(ChatMessageModel.class, R.layout.tile_chat_right,
                 ChatMessageViewHolder.class, chatRef);
         mRecyclerView.setAdapter(mAdapter);
@@ -129,6 +138,8 @@ public class ChatFragment extends PagerFragment {
     }
 
 
+
+
     public interface OnFragmentInteractionListener {
         void onUpdateSelect(Uri uri);
     }
@@ -154,7 +165,7 @@ public class ChatFragment extends PagerFragment {
     public static class FirebaseChatAdapter extends FirebaseRecyclerAdapter<ChatMessageModel, ChatMessageViewHolder> {
 
         public FirebaseChatAdapter(Class<ChatMessageModel> modelClass, int modelLayout, Class<ChatMessageViewHolder> viewHolderClass, Firebase ref) {
-            super(modelClass, modelLayout, viewHolderClass, ref);
+            super(modelClass, modelLayout, viewHolderClass, ref.orderByChild("timestamp"));
 
         }
 
@@ -202,7 +213,10 @@ public class ChatFragment extends PagerFragment {
         public void submitMessage() {
             String message = mInputText.getText().toString().trim();
             Firebase messageRef = chatRef.push();
-            messageRef.setValue(new ChatMessageModel(chatRef.getAuth().getUid(), null, message, 0));
+
+            long timestamp = new Date().getTime();
+
+            messageRef.setValue(new ChatMessageModel(chatRef.getAuth().getUid(), null, message, timestamp));
             mInputText.setText("");
         }
 

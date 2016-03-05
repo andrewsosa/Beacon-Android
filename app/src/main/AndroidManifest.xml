@@ -31,7 +31,8 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_main"
-            android:theme="@style/AppTheme.DrawerTheme" />
+            android:theme="@style/AppTheme.DrawerTheme"
+            android:windowSoftInputMode="adjustResize"/>
         <activity
             android:name=".NewGroupActivity"
             android:parentActivityName=".MainActivity" />
